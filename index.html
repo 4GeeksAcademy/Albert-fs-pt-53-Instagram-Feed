@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <!-- container-fluid: Crea un contenedor que ocupa el 100% del ancho de la pantalla, para un diseño fluido. -->
+    <div class="container-fluid">
+
+        <!-- ENCABEZADO -->
+        <!-- row: Establece una fila en el sistema de grillas de Bootstrap, que contiene las columnas. -->
+        <div class="row">
+
+            <!-- col-sm-3: Crea una columna que ocupa 3 de las 12 unidades posibles en pantallas medianas (sm). -->
+            <!-- d-flex: Aplica un display flex para alinear elementos. -->
+            <!-- align-items-center: Centra los elementos de la columna verticalmente. -->
+            <!-- p-3: Añade un padding (espaciado interno) en todos los lados del elemento. -->
+            <!-- bg-light: Aplica un fondo claro al elemento. -->
+            <div class="col-sm-3 d-flex align-items-center p-3 bg-light">
+
+                <!-- fa-instagram: Icono de Instagram de FontAwesome. -->
+                <!-- fa-xl y m-1: Tamaño extra grande para el icono y margen en todos los lados. -->
+                <i class="fa-brands fa-instagram fa-xl m-1 fs-1"></i>
+                <h1 class="fs-2">Instagram</h1>
+
+            </div>
+
+            <!-- BOTONES DEL ENCABEZADO -->
+            <!-- col-sm-9: Ocupa 9/12 del ancho de la pantalla en dispositivos medianos. -->
+            <!-- justify-content-end: Alinea los elementos al final (derecha) del contenedor flex. -->
+            <div class="col-sm-9 d-flex justify-content-end p-3 bg-light">
+
+                <!-- btn y btn-success: Estilos de botón y color verde (éxito) de Bootstrap. -->
+                <!-- m-1: Añade un margen en todos los lados del botón. -->
+                <button type="button" class="btn btn-success m-1" data-bs-toggle="modal"
+                    data-bs-target="#new-post-modal">Create a new post</button>
+
+                <div class="modal fade" id="new-post-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Create a new post</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p><strong>Caption:</strong></p>
+                                <textarea class="form-control" id="postCaption" rows="3"
+                                    placeholder="Add the caption of your post here"></textarea>
+                                <button class="btn1 mt-2 border-1"><i class="fa-solid fa-camera "></i></button>
+                                <button class="btn2 border-1"><i class="fa -solid fa-location-dot"></i></button>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success">Publish</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- btn-group: Agrupa varios botones juntos en un componente unificado. -->
+                <div class="btn-group">
+
+                    <!-- data-bs-toggle="dropdown": Activa el comportamiento desplegable en Bootstrap. -->
+                    <!-- aria-expanded="false": Indica que el menú desplegable no está expandido inicialmente. -->
+                    <button type="button" class="btn btn-secondary dropdown-toggle m-1" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="fa-solid fa-gear fa-lg"></i>
+                    </button>
+
+                    <!-- dropdown-menu: Define un menú desplegable. -->
+                    <ul class="dropdown-menu">
+
+                        <!-- dropdown-item: Estilo para cada elemento dentro del menú desplegable. -->
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Accesibility</a></li>
+                        <li><a class="dropdown-item" href="#">Privacy and data</a></li>
+                        <li>
+
+                            <!-- dropdown-divider: Añade una línea divisora dentro del menú desplegable. -->
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PESTAÑAS -->
+        <!-- Justificación centrada y pestañas de navegación -->
+        <div class="row justify-content-center">
+            <div class="col-12">
+
+                <!-- nav y nav-tabs: Estilos de navegación con pestañas de Bootstrap. -->
+                <!-- justify-content-center: Centra las pestañas en el eje horizontal. -->
+                <ul class="nav nav-tabs justify-content-center border-bottom-0" id="nav-tab" role="tablist">
+
+                    <!-- nav-item: Elemento individual de una lista de navegación. -->
+                    <li class="nav-item" role="presentation">
+
+                        <!-- nav-link y active: Estilo de enlace de navegación y clase para la pestaña activa. -->
+                        <!-- data-bs-toggle="tab": Habilita el cambio entre pestañas. -->
+                        <!-- aria-controls: Identifica el panel que el enlace de la pestaña controla. -->
+                        <button class="nav-link active border-0" id="nav-home-tab" data-bs-toggle="tab"
+                            data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                            aria-selected="true">
+                            <i class="fa-solid fa-table-cells text-muted"></i>
+                        </button>
+
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link border-0" id="nav-profile-tab" data-bs-toggle="tab"
+                            data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
+                            aria-selected="false">
+                            <i class="fa-solid fa-square text-muted"></i>
+                        </button>
+
+                    </li>
+
+                </ul>
+
+                <!-- CONTENIDO DE LAS PESTAÑAS -->
+                <!-- tab-content: Contenedor para el contenido de cada pestaña. -->
+                <div class="tab-content mt-2" id="nav-tabContent">
+
+                    <!-- PESTAÑA 1 -->
+                    <!-- tab-pane: Panel de contenido individual de una pestaña. -->
+                    <!-- fade y show: Efectos de transición y visibilidad para el panel activo. -->
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+                        <!-- CONTENIDO DE LA PESTAÑA 1 -->
+                        <!-- FILA 1 -->
+                        <!-- Sistema de grillas para el contenido de la pestaña -->
+                        <div class="row row-cols-1 row-cols-md-3 g-2">
+
+                            <!-- COLUMNA 1 -->
+                            <!-- col: Columna dentro del sistema de grillas. -->
+                            <div class="col">
+
+                                <!-- CONTENEDOR DE LA IMAGEN 1 -->
+                                <!-- card: Estilo de tarjeta de Bootstrap para contener elementos como imágenes o texto. -->
+                                <div class="card">
+                                    <img src="https://cdn.pixabay.com/photo/2023/11/04/07/57/owl-8364426_1280.jpg"
+                                        class="card-img-top" alt="Imagen 1">
+                                </div>
+
+                            </div>
+
+                            <!-- COLUMNA 2 -->
+                            <div class="col">
+
+                                <!-- CONTENEDOR DE LA IMAGEN 2 -->
+                                <div class="card">
+                                    <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/08/7b/4a/db.jpg"
+                                        class="card-img-top" alt="Imagen 2">
+                                </div>
+
+                            </div>
+
+                            <!-- COLUMNA 3 -->
+                            <div class="col">
+
+                                <!-- CONTENEDOR DE LA IMAGEN 3 -->
+                                <div class="card">
+                                    <img src="./assets/imagen.jpeg" class="card-img-top" alt="Imagen 3">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- FILA 2 -->
+                        <div class="row row-cols-1 row-cols-md-3 g-2 mt-0">
+
+                            <!-- COLUMNA 1 -->
+                            <div class="col">
+
+                                <!-- CONTENEDOR DE IMAGEN 4 -->
+                                <div class="card">
+                                    <img src="https://p4.wallpaperbetter.com/wallpaper/884/156/15/animals-horses-landscapes-nature-wallpaper-preview.jpg"
+                                        class="card-img-top" alt="Imagen 4">
+                                </div>
+
+                            </div>
+
+                            <!-- COLUMNA 2 -->
+                            <div class="col">
+
+                                <!-- CONTENEDOR DE IMAGEN 5 -->
+                                <div class="card">
+                                    <img src="https://p4.wallpaperbetter.com/wallpaper/468/992/869/ferrari-f40-hd-wallpaper-preview.jpg"
+                                        class="card-img-top" alt="Imagen 5">
+                                </div>
+
+                            </div>
+
+                            <!-- COLUMNA 3 -->
+                            <div class="col">
+
+                                <!-- CONTENEDOR DE IMAGEN 6 -->
+                                <div class="card">
+                                    <img src="https://p4.wallpaperbetter.com/wallpaper/489/143/594/german-landscapes-wallpaper-preview.jpg"
+                                        class="card-img-top" alt="Imagen 6">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- FILA 3 -->
+                        <div class="row row-cols-1 row-cols-md-3 g-2 mt-0">
+
+                            <!-- Columna 1 -->
+                            <div class="col">
+
+                                <!-- CONTENEDOR DE IMAGEN 7 -->
+                                <div class="card">
+                                    <img src="https://p4.wallpaperbetter.com/wallpaper/641/292/969/muhammad-ali-sport-sports-boxing-hd-wallpaper-preview.jpg"
+                                        class="card-img-top" alt="Imagen 7">
+                                </div>
+
+                            </div>
+
+                            <!-- COLUMNA 2 -->
+                            <div class="col">
+
+                                <!-- CONTENEDOR DE IMAGEN 8 -->
+                                <div class="card">
+                                    <img src="https://p4.wallpaperbetter.com/wallpaper/869/712/943/skateboarding-mountains-road-wallpaper-preview.jpg"
+                                        class="card-img-top" alt="Imagen 8">
+                                </div>
+                            </div>
+
+                            <!-- COLUMNA 3 -->
+                            <div class="col">
+
+                                <!-- CONTENEDOR DE IMAGEN 9 -->
+                                <div class="card">
+                                    <img src="https://p4.wallpaperbetter.com/wallpaper/230/28/833/gorillas-black-animals-face-wallpaper-preview.jpg"
+                                        class="card-img-top" alt="Imagen 9">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PESTAÑA 2 -->
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div class="row justify-content-center">
+
+                            <!-- COLUMNA 1 -->
+                            <!-- col: Columna dentro del sistema de grillas. -->
+                            <div class="col-md-6 mt-4">
+
+                                <!-- CONTENEDOR DE LA IMAGEN 1 -->
+                                <!-- card: Estilo de tarjeta de Bootstrap para contener elementos como imágenes o texto. -->
+                                <div class="card border-0 rounded-lg bg-light">
+                                    <h1 class="m-2">Citrus Gaze in Daylight Forest</h1>
+                                    <div class="card-header p-0">
+                                        <p class="text-right text-muted position-absolute top-0 end-0 p-2">04/08</p>
+
+                                        <img src="https://cdn.pixabay.com/photo/2023/11/04/07/57/owl-8364426_1280.jpg"
+                                            class="card-img-top img-fluid" alt="The Owl">
+                                        <div class="card-body bg-light rounded-lg">
+
+                                            <p><strong>1254 Likes</strong></p>
+                                            <p>An owl with orange eyes calmly perched on a branch, bathed in sunlight
+                                                amidst
+                                                the verdant daytime forest. </p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- CONTENEDOR DE LA IMAGEN 2 -->
+                                <div class="card border-0 rounded-lg bg-light mt-5">
+                                    <h1 class="m-2">Rock Crawler</h1>
+                                    <div class="card-header p-0">
+                                        <p class="text-right text-muted position-absolute top-0 end-0 p-2">05/09</p>
+
+                                        <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/08/7b/4a/db.jpg"
+                                            class="card-img-top img-fluid" alt="The Owl">
+
+                                        <div class="card-body bg-light">
+                                            <p><strong>25821 Likes</strong></p>
+                                            <p>A robust, modified 4x4 vehicle, perfectly equipped for scaling rugged,
+                                                rocky
+                                                terrains.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- CONTENEDOR DE LA IMAGEN 3 -->
+                                <div class="card border-0 rounded-lg bg-light mt-5">
+                                    <h1 class="m-2">Seaside Serenity</h1>
+                                    <div class="card-header p-0">
+                                        <p class="text-right text-muted position-absolute top-0 end-0 p-2">12/12</p>
+
+                                        <img src="./assets/imagen.jpeg" class="card-img-top img-fluid" alt="The Owl">
+
+                                        <div class="card-body bg-light">
+                                            <p><strong>10541 Likes</strong></p>
+                                            <p>A relaxed and happy seal, stretching out under the sun on a peaceful
+                                                sandy
+                                                beach.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- CONTENEDOR DE LA IMAGEN 4 -->
+                                <div class="card border-0 rounded-lg bg-light mt-5">
+                                    <h1 class="m-2">Equine Elegance</h1>
+                                    <div class="card-header p-0">
+                                        <p class="text-right text-muted position-absolute top-0 end-0 p-2">01/02</p>
+
+                                        <img src="https://p4.wallpaperbetter.com/wallpaper/884/156/15/animals-horses-landscapes-nature-wallpaper-preview.jpg"
+                                            class="card-img-top img-fluid" alt="The Owl">
+
+                                        <div class="card-body bg-light">
+                                            <p><strong>8975 Likes</strong></p>
+                                            <p>A majestic and elegant horse, standing out with its natural grace and
+                                                dignified posture.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- CONTENEDOR DE LA IMAGEN 5 -->
+                                <div class="card border-0 rounded-lg bg-light mt-5">
+                                    <h1 class="m-2">Scarlet Speed</h1>
+                                    <div class="card-header p-0">
+                                        <p class="text-right text-muted position-absolute top-0 end-0 p-2">06/09</p>
+
+                                        <img src="https://p4.wallpaperbetter.com/wallpaper/468/992/869/ferrari-f40-hd-wallpaper-preview.jpg"
+                                            class="card-img-top img-fluid" alt="The Owl">
+
+                                        <div class="card-body bg-light">
+                                            <p><strong>6936 Likes</strong></p>
+                                            <p>The iconic and swift Ferrari F40, captured in all its classic design and
+                                                splendor.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- CONTENEDOR DE LA IMAGEN 6 -->
+                                <div class="card border-0 rounded-lg bg-light mt-5">
+                                    <h1 class="m-2">Lakeside Haven</h1>
+                                    <div class="card-header p-0">
+                                        <p class="text-right text-muted position-absolute top-0 end-0 p-2">10/12</p>
+
+                                        <img src="https://p4.wallpaperbetter.com/wallpaper/489/143/594/german-landscapes-wallpaper-preview.jpg"
+                                            class="card-img-top img-fluid" alt="The Owl">
+
+                                        <div class="card-body bg-light">
+                                            <p><strong>3021 Likes</strong></p>
+                                            <p>A picturesque cabin nestled in the middle of a serene lake, surrounded by
+                                                stunning natural scenery.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- CONTENEDOR DE LA IMAGEN 7 -->
+                                <div class="card border-0 rounded-lg bg-light mt-5">
+                                    <h1 class="m-2">Ali's Legacy</h1>
+                                    <div class="card-header p-0">
+                                        <p class="text-right text-muted position-absolute top-0 end-0 p-2">02/03</p>
+
+                                        <img src="https://p4.wallpaperbetter.com/wallpaper/641/292/969/muhammad-ali-sport-sports-boxing-hd-wallpaper-preview.jpg"
+                                            class="card-img-top img-fluid" alt="The Owl">
+
+                                        <div class="card-body bg-light">
+                                            <p><strong>35122 Likes</strong></p>
+                                            <p>An iconic image of Mohammed Ali, capturing his strength, charisma, and
+                                                fighting spirit.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- CONTENEDOR DE LA IMAGEN 8 -->
+                                <div class="card border-0 rounded-lg bg-light mt-5">
+                                    <h1 class="m-2">Mountain Road Rush</h1>
+                                    <div class="card-header p-0">
+                                        <p class="text-right text-muted position-absolute top-0 end-0 p-2">03/03</p>
+
+                                        <img src="https://p4.wallpaperbetter.com/wallpaper/869/712/943/skateboarding-mountains-road-wallpaper-preview.jpg"
+                                            class="card-img-top img-fluid" alt="The Owl">
+
+                                        <div class="card-body bg-light">
+                                            <p><strong>15050 Likes</strong></p>
+                                            <p>The exhilarating experience of descending a mountainous road on a
+                                                longboard,
+                                                with breathtaking views.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- CONTENEDOR DE LA IMAGEN 9 -->
+                                <div class="card border-0 rounded-lg bg-light mt-5 mb-5">
+                                    <h1 class="m-2">Primate Contemplation</h1>
+                                    <div class="card-header p-0">
+                                        <p class="text-right text-muted position-absolute top-0 end-0 p-2">01/02</p>
+
+                                        <img src="https://p4.wallpaperbetter.com/wallpaper/230/28/833/gorillas-black-animals-face-wallpaper-preview.jpg"
+                                            class="card-img-top img-fluid" alt="The Owl">
+
+                                        <div class="card-body bg-light">
+                                            <p><strong>10234 Likes</strong></p>
+                                            <p>A thoughtful gorilla, captured in a moment of quiet contemplation,
+                                                highlighting its intelligent and emotive expression.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Popper.js: Biblioteca para manejar tooltips y popovers. Requerido por Bootstrap. -->
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+                    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+                    crossorigin="anonymous"></script>
+
+                <!-- Bootstrap JS: JavaScript de Bootstrap para habilitar funcionalidades dinámicas como el menú desplegable. -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+                    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+                    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
